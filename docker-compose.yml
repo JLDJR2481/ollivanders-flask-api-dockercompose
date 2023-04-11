@@ -5,7 +5,7 @@ services:
     container_name: mongo_flask_ollivanders
     image: mongo
     volumes:
-      - mongo-ollivanders:/data/db
+      - mongo_ollivanders:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: mongoadmin
       MONGO_INITDB_ROOT_PASSWORD: secret
@@ -13,20 +13,20 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - docker-ollivanders-flask
+      - docker_ollivanders_flask
 
   api:
     container_name: ollivanders-flask
-    image: ollivanders-flask:latest
+    image: ollivanders-flask
     environment:
-      URI: mongodb://mongoadmin:secret@mongo:27017/
+      URI: ${URI}
     ports:
       - "5000:5000"
     networks:
-      - docker-ollivanders-flask
+      - docker_ollivanders_flask
 
 networks:
-  docker-ollivanders-flask:
+  docker_ollivanders_flask:
 
 volumes:
-  mongo-ollivanders:
+  mongo_ollivanders:
