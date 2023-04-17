@@ -37,9 +37,9 @@ touch .env
 ```
 
 En el archivo .env, añadimos una URI. Aquí tienes una URI de ejemplo:
-URI = "mongodb+srv://<username>:<password>@<database>.<API>.mongodb.net/?retryWrites=true&w=majority"
+URI = "mongodb+srv://username:password@database.API.mongodb.net/?retryWrites=true&w=majority"
 
-Reemplaza username con el usuario con permisos en tu base de datos, la contraseña del mismo, la base de datos (preferiblemente, ollivanders, aunque puede ser cualquiera) y API con la API que te proporciona MongoDB Atlas tras pedirla.
+Reemplaza username con el usuario con permisos en tu base de datos, password con la contraseña del mismo, database por el nombre de la base de datos (preferiblemente, ollivanders, aunque puede ser cualquiera) y API con la API que te proporciona MongoDB Atlas tras pedirla.
 
 Más información sobre la API de Mongo [aquí](https://www.mongodb.com/docs/atlas/api/)
 
