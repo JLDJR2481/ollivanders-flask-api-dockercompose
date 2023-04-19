@@ -10,7 +10,11 @@ from resources.items import items_blueprint
 def init_app():
     app = Flask(__name__)
     CORS(app)
+
+    # Utilizar si se desea reiniciar la BBDD
     Database.dropCollection()
+
+    # Utilizar si no se tiene la BBDD
     Database.initdb()
 
     app.register_blueprint(root_bp)
